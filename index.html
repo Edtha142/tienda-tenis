@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Virtual MIKI — Tenis Premium</title>
+  <meta name="description" content="Catálogo de tenis premium. OnCloud, Adidas, Nike, New Balance, Jordan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header__inner container">
+      <a href="#" class="logo-img-wrap">
+        <img src="assets/images/logo.jpeg" alt="Tienda Virtual MIKI" class="logo-img" />
+      </a>
+      <nav class="header__nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header__wa-group">
+        <a class="btn btn--wa header__wa" id="header-wa1" href="#" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.428a.75.75 0 0 0 .916.916l5.573-1.471A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.95-1.355l-.355-.211-3.684.972.988-3.597-.232-.372A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── HERO ───────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__content container">
+      <div class="hero__logo-wrap">
+        <img src="assets/images/logo.jpeg" alt="Tienda Virtual MIKI" class="hero__logo" />
+      </div>
+      <p class="hero__eyebrow">Colección disponible</p>
+      <h1 class="hero__title">Tenis de<br/>alta calidad</h1>
+      <p class="hero__sub">OnCloud · Adidas · Nike · New Balance · Jordan</p>
+      <a href="#catalogo" class="btn btn--dark">Ver catálogo</a>
+    </div>
+    <div class="hero__bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── FILTROS ─────────────────────────────────────────────────────────── -->
+  <section class="filters" id="catalogo">
+    <div class="container">
+      <div class="filters__row">
+
+        <div class="filters__search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="search" placeholder="Buscar modelo..." autocomplete="off" />
+        </div>
+
+        <select id="filter-marca">
+          <option value="">Todas las marcas</option>
+        </select>
+
+        <select id="filter-talla">
+          <option value="">Todas las tallas</option>
+        </select>
+
+        <select id="filter-precio">
+          <option value="">Precio</option>
+          <option value="0-250">Hasta $250</option>
+          <option value="250-300">$250 – $300</option>
+          <option value="300-380">$300 – $380</option>
+          <option value="380-999">Más de $380</option>
+        </select>
+
+        <button id="clear-filters" class="btn btn--ghost">Limpiar</button>
+      </div>
+      <p class="filters__count" id="result-count"></p>
+    </div>
+  </section>
+
+  <!-- ── GRID DE PRODUCTOS ───────────────────────────────────────────────── -->
+  <main class="main container">
+    <div class="grid" id="product-grid"></div>
+    <p class="empty-state" id="empty-state" hidden>
+      No se encontraron productos con esos filtros.
+    </p>
+  </main>
+
+  <!-- ── MODAL DE DETALLE ────────────────────────────────────────────────── -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+    <div class="modal__box">
+      <button class="modal__close" id="modal-close" aria-label="Cerrar">✕</button>
+
+      <div class="modal__gallery">
+        <img class="modal__main-img" id="modal-img" src="" alt="" />
+        <div class="modal__thumbs" id="modal-thumbs"></div>
+      </div>
+
+      <div class="modal__info">
+        <span class="badge" id="modal-stock-badge"></span>
+        <p class="modal__brand" id="modal-brand"></p>
+        <h2 class="modal__title" id="modal-title"></h2>
+        <p class="modal__price" id="modal-price"></p>
+
+        <div class="modal__tallas">
+          <p class="modal__label">Talla disponible</p>
+          <div class="tallas-row" id="modal-tallas"></div>
+        </div>
+
+        <!-- Dos botones de WhatsApp -->
+        <div class="modal__wa-group">
+          <a class="btn btn--wa btn--full" id="modal-wa1" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.428a.75.75 0 0 0 .916.916l5.573-1.471A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.95-1.355l-.355-.211-3.684.972.988-3.597-.232-.372A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Contacto 1
+          </a>
+          <a class="btn btn--wa btn--full" id="modal-wa2" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.428a.75.75 0 0 0 .916.916l5.573-1.471A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.95-1.355l-.355-.211-3.684.972.988-3.597-.232-.372A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Contacto 2
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/images/logo.jpeg" alt="Tienda Virtual MIKI" class="footer__logo" />
+        <p>Tenis premium a tu puerta.<br/>Contáctanos por WhatsApp para disponibilidad.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Contacto</h4>
+        <a id="footer-wa1" href="#" target="_blank" rel="noopener">📱 WhatsApp 1</a>
+        <a id="footer-wa2" href="#" target="_blank" rel="noopener">📱 WhatsApp 2</a>
+        <a href="https://www.tiktok.com/@marcastendencia.1" target="_blank" rel="noopener">🎵 TikTok</a>
+      </div>
+    </div>
+    <p class="footer__copy">© 2025 Tienda Virtual MIKI. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
