@@ -111,50 +111,47 @@ function getToken() {
 
 async function loadProductos() {
   showLoading(true);
-  const token = getToken();
 
-  // Intentar GitHub con timeout de 6 segundos
-  let cargadoDesdeGitHub = false;
+  // ── PASO 1: cargar JSON local primero (instantáneo en GitHub Pages) ──
   try {
     const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 6000);
-    const headers = token ? { Authorization: `token ${token}` } : {};
+    setTimeout(() => ctrl.abort(), 8000);
+    const res = await fetch('../data/productos.json', { signal: ctrl.signal });
+    if (res.ok) {
+      productos = await res.json();
+    } else {
+      throw new Error('JSON no encontrado');
+    }
+  } catch (e) {
+    showToast('Error al cargar productos: ' + e.message, 'error');
+    showLoading(false);
+    return;
+  }
+
+  showLoading(false); // mostrar UI ya — no esperar a GitHub
+
+  // ── PASO 2: obtener SHA de GitHub en segundo plano (para poder guardar) ──
+  obtenerSHAEnSegundoPlano();
+}
+
+async function obtenerSHAEnSegundoPlano() {
+  const token = getToken();
+  if (!token) return; // sin token, nada que hacer
+  try {
+    const ctrl = new AbortController();
+    setTimeout(() => ctrl.abort(), 8000);
     const res = await fetch(
       `https://api.github.com/repos/${ADMIN_CONFIG.githubRepo}/contents/${ADMIN_CONFIG.githubFile}`,
-      { headers, signal: ctrl.signal }
+      { headers: { Authorization: `token ${token}` }, signal: ctrl.signal }
     );
-    clearTimeout(timer);
     if (res.ok) {
       const data = await res.json();
-      fileSHA  = data.sha;
-      const json = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
-      productos = JSON.parse(json);
+      fileSHA = data.sha;
       updateGithubStatus(true);
-      cargadoDesdeGitHub = true;
     }
   } catch {
-    // GitHub no alcanzable o sin token — usar JSON local
+    // silencioso — el SHA se obtendrá al guardar
   }
-
-  // Fallback: JSON local (siempre disponible en GitHub Pages)
-  if (!cargadoDesdeGitHub) {
-    try {
-      const ctrl2 = new AbortController();
-      const timer2 = setTimeout(() => ctrl2.abort(), 5000);
-      const res2 = await fetch('../data/productos.json', { signal: ctrl2.signal });
-      clearTimeout(timer2);
-      if (res2.ok) {
-        productos = await res2.json();
-        updateGithubStatus(false);
-      } else {
-        throw new Error('JSON local no encontrado');
-      }
-    } catch {
-      showToast('No se pudieron cargar los productos', 'error');
-    }
-  }
-
-  showLoading(false);
 }
 
 async function saveToGitHub() {
