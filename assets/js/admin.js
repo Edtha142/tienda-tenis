@@ -103,31 +103,48 @@ function getToken() {
 async function loadProductos() {
   showLoading(true);
   const token = getToken();
+
+  // Intentar GitHub con timeout de 6 segundos
+  let cargadoDesdeGitHub = false;
   try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 6000);
     const headers = token ? { Authorization: `token ${token}` } : {};
     const res = await fetch(
       `https://api.github.com/repos/${ADMIN_CONFIG.githubRepo}/contents/${ADMIN_CONFIG.githubFile}`,
-      { headers }
+      { headers, signal: ctrl.signal }
     );
+    clearTimeout(timer);
     if (res.ok) {
       const data = await res.json();
       fileSHA  = data.sha;
       const json = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
       productos = JSON.parse(json);
       updateGithubStatus(true);
-    } else {
-      throw new Error('GitHub sin acceso');
+      cargadoDesdeGitHub = true;
     }
   } catch {
-    // Fallback: JSON local
+    // GitHub no alcanzable o sin token — usar JSON local
+  }
+
+  // Fallback: JSON local (siempre disponible en GitHub Pages)
+  if (!cargadoDesdeGitHub) {
     try {
-      const res = await fetch('../data/productos.json');
-      productos = await res.json();
-      updateGithubStatus(false);
+      const ctrl2 = new AbortController();
+      const timer2 = setTimeout(() => ctrl2.abort(), 5000);
+      const res2 = await fetch('../data/productos.json', { signal: ctrl2.signal });
+      clearTimeout(timer2);
+      if (res2.ok) {
+        productos = await res2.json();
+        updateGithubStatus(false);
+      } else {
+        throw new Error('JSON local no encontrado');
+      }
     } catch {
       showToast('No se pudieron cargar los productos', 'error');
     }
   }
+
   showLoading(false);
 }
 

@@ -346,10 +346,11 @@
 
     /* ── LOADING ─────────────────────────────────────────────────── */
     .loading-overlay {
-      position: fixed; inset: 0; z-index: 300;
-      background: rgba(255,255,255,.8);
+      position: fixed; inset: 0; z-index: 9000;
+      background: rgba(255,255,255,.92);
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 12px;
+      cursor: wait;
     }
     .spinner {
       width: 40px; height: 40px;
