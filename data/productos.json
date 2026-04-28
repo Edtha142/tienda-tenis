@@ -8,7 +8,7 @@
     "tallas": [
       41
     ],
-    "stock": 0,
+    "stock": 2,
     "imagen": "assets/images/01_tennis_oncloud_t41/main.jpg",
     "carpeta": "01_tennis_oncloud_t41",
     "destacado": false,
@@ -41,7 +41,7 @@
     "tallas": [
       40
     ],
-    "stock": 1,
+    "stock": 2,
     "imagen": "assets/images/03_tennis_adodas_ultraboost_t40/main.jpg",
     "carpeta": "03_tennis_adodas_ultraboost_t40",
     "destacado": false,
