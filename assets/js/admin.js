@@ -22,17 +22,17 @@ let editingId   = null; // null = nuevo producto
 let hasChanges  = false;
 
 // ═══════════════════════════════════════════════════════════════
-// AUTH — Hash sincrónico (compatible con extensiones de navegador)
+// AUTH — Contraseña fija hardcodeada (no configurable desde web)
 // ═══════════════════════════════════════════════════════════════
 
-// Hash djb2 + sal fija — suficiente para panel de uso personal
+const ADMIN_HASH = 'c82edeec03f49794'; // hash de la contraseña del admin
+
 function hashPwd(pwd) {
   const salted = 'miki-admin-2025:' + pwd;
   let h = 5381;
   for (let i = 0; i < salted.length; i++) {
     h = (Math.imul(h, 33) ^ salted.charCodeAt(i)) >>> 0;
   }
-  // Segunda pasada para más entropía
   let h2 = h ^ 0xdeadbeef;
   for (let i = salted.length - 1; i >= 0; i--) {
     h2 = (Math.imul(h2, 31) + salted.charCodeAt(i)) >>> 0;
@@ -40,18 +40,8 @@ function hashPwd(pwd) {
   return h.toString(16).padStart(8,'0') + h2.toString(16).padStart(8,'0');
 }
 
-function setupContrasena(pwd, confirm) {
-  if (!pwd || pwd.length < 6) { showToast('Mínimo 6 caracteres', 'error'); return; }
-  if (pwd !== confirm)        { showToast('Las contraseñas no coinciden', 'error'); return; }
-  localStorage.setItem('admin_hash', hashPwd(pwd));
-  sessionStorage.setItem('admin_ok', '1');
-  showApp();
-}
-
 function login(pwd) {
-  const stored = localStorage.getItem('admin_hash');
-  if (!stored) { checkAuth(); return; }
-  if (hashPwd(pwd) === stored) {
+  if (hashPwd(pwd) === ADMIN_HASH) {
     sessionStorage.setItem('admin_ok', '1');
     showApp();
   } else {
@@ -67,10 +57,8 @@ function logout() {
 }
 
 function checkAuth() {
-  const hasHash = localStorage.getItem('admin_hash');
-  const isOk    = sessionStorage.getItem('admin_ok');
-  if (!hasHash)  { showScreen('setup'); return; }
-  if (!isOk)     { showScreen('login'); return; }
+  const isOk = sessionStorage.getItem('admin_ok');
+  if (!isOk) { showScreen('login'); return; }
   showApp();
 }
 
@@ -643,16 +631,6 @@ function attachAdminEvents() {
 // ═══════════════════════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Formularios de auth
-  const fSetup = document.getElementById('form-setup');
-  if (fSetup) fSetup.addEventListener('submit', e => {
-    e.preventDefault();
-    setupContrasena(
-      document.getElementById('setup-pwd').value,
-      document.getElementById('setup-confirm').value
-    );
-  });
-
   const fLogin = document.getElementById('form-login');
   if (fLogin) fLogin.addEventListener('submit', e => {
     e.preventDefault();

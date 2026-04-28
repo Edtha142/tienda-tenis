@@ -380,28 +380,7 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════════════
-     PANTALLA 1 — Configurar contraseña (primera vez)
-════════════════════════════════════════════════════════════ -->
-<div id="screen-setup" class="auth-screen" hidden>
-  <div class="auth-card">
-    <img src="../assets/images/logo.jpeg" alt="MIKI" class="auth-logo"
-         onerror="this.style.display='none'" />
-    <h1>Crear contraseña</h1>
-    <p>Primera vez que ingresas al panel. Elige una contraseña para protegerlo.</p>
-    <form id="form-setup">
-      <div class="auth-field">
-        <label for="setup-pwd">Nueva contraseña</label>
-        <input id="setup-pwd" type="password" placeholder="Mínimo 6 caracteres" required minlength="6" />
-      </div>
-      <div class="auth-field">
-        <label for="setup-confirm">Confirmar contraseña</label>
-        <input id="setup-confirm" type="password" placeholder="Repite la contraseña" required />
-      </div>
-      <button type="submit" class="btn btn--dark">Crear contraseña y entrar</button>
-    </form>
-  </div>
-</div>
+<!-- screen-setup eliminado: contraseña hardcodeada en admin.js -->
 
 <!-- ════════════════════════════════════════════════════════════
      PANTALLA 2 — Login
@@ -451,7 +430,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           Guardar en GitHub
         </button>
-        <button class="btn btn--ghost btn--sm" onclick="abrirCambiarPwd()" title="Cambiar contraseña">🔑</button>
+
         <button class="btn btn--ghost btn--sm" onclick="logout()" title="Cerrar sesión">Salir</button>
       </div>
     </div>
