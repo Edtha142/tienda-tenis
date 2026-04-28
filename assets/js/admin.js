@@ -63,13 +63,11 @@ function checkAuth() {
 }
 
 function showScreen(name) {
-  document.getElementById('screen-setup').hidden = (name !== 'setup');
   document.getElementById('screen-login').hidden = (name !== 'login');
   document.getElementById('screen-app').hidden   = true;
 }
 
 async function showApp() {
-  document.getElementById('screen-setup').hidden = true;
   document.getElementById('screen-login').hidden = true;
   document.getElementById('screen-app').hidden   = false;
   await init();
