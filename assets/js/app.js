@@ -6,7 +6,7 @@
 // ─── Configuración ──────────────────────────────────────────────
 const CONFIG = {
   whatsapp1: { numero: '59174864473', nombre: 'Miki' },  // ← cambia por número real
-  whatsapp2: { numero: '59168142710', nombre: 'Paola' },  // ← cambia por número real
+  whatsapp2: { numero: '59169820171', nombre: 'Paola' },  // ← cambia por número real
   catalogPath: 'data/productos.json',
   imagesBase:  '',
 };
