@@ -1,7 +1,7 @@
 [
   {
     "id": "001",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T41",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -17,7 +17,7 @@
   },
   {
     "id": "002",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T41",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -34,7 +34,7 @@
   },
   {
     "id": "003",
-    "nombre": "ADIDAS ULTRABOOST",
+    "nombre": "ADIDAS ULTRABOOST T40",
     "marca": "Por definir",
     "precio": 290,
     "descripcion": "",
@@ -50,7 +50,7 @@
   },
   {
     "id": "004",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T42",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -67,7 +67,7 @@
   },
   {
     "id": "005",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T44",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -84,7 +84,7 @@
   },
   {
     "id": "006",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T41b",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -101,7 +101,7 @@
   },
   {
     "id": "007",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T42b",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -118,7 +118,7 @@
   },
   {
     "id": "008",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T40",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -135,7 +135,7 @@
   },
   {
     "id": "009",
-    "nombre": "ADIDAS ULTRABOOST",
+    "nombre": "ADIDAS ULTRABOOST T41",
     "marca": "Por definir",
     "precio": 290,
     "descripcion": "",
@@ -151,7 +151,7 @@
   },
   {
     "id": "010",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T41c",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -168,7 +168,7 @@
   },
   {
     "id": "011",
-    "nombre": "TENNIS ADIZERO",
+    "nombre": "TENNIS ADIZERO T45",
     "marca": "Por definir",
     "precio": 350,
     "descripcion": "",
@@ -185,7 +185,7 @@
   },
   {
     "id": "012",
-    "nombre": "NEW BALANCE FRESH FOAM",
+    "nombre": "NEW BALANCE T42",
     "marca": "Por definir",
     "precio": 250,
     "descripcion": "",
@@ -201,7 +201,7 @@
   },
   {
     "id": "013",
-    "nombre": "NIKE PEGASUS",
+    "nombre": "NIKE PEGASUS T41",
     "marca": "Por definir",
     "precio": 250,
     "descripcion": "",
@@ -217,7 +217,7 @@
   },
   {
     "id": "014",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T44",
     "marca": "Por definir",
     "precio": 370,
     "descripcion": "",
@@ -233,7 +233,7 @@
   },
   {
     "id": "015",
-    "nombre": "NIKE PEGASUS",
+    "nombre": "NIKE PEGASUS T45",
     "marca": "Por definir",
     "precio": 230,
     "descripcion": "",
@@ -249,7 +249,7 @@
   },
   {
     "id": "016",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T40",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -265,7 +265,7 @@
   },
   {
     "id": "017",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T40b",
     "marca": "Por definir",
     "precio": 370,
     "descripcion": "",
@@ -281,7 +281,7 @@
   },
   {
     "id": "018",
-    "nombre": "NIKE PEGASUS",
+    "nombre": "NIKE PEGASUS T42",
     "marca": "Por definir",
     "precio": 280,
     "descripcion": "",
@@ -297,7 +297,7 @@
   },
   {
     "id": "019",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T44b",
     "marca": "Por definir",
     "precio": 370,
     "descripcion": "",
@@ -313,7 +313,7 @@
   },
   {
     "id": "020",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T40c",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -329,7 +329,7 @@
   },
   {
     "id": "021",
-    "nombre": "NEW BALANCE FRESH FOAM",
+    "nombre": "NEW BALANCE T43",
     "marca": "Por definir",
     "precio": 250,
     "descripcion": "",
@@ -345,7 +345,7 @@
   },
   {
     "id": "022",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T41b",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -361,7 +361,7 @@
   },
   {
     "id": "023",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T41c",
     "marca": "Por definir",
     "precio": 370,
     "descripcion": "",
@@ -377,7 +377,7 @@
   },
   {
     "id": "024",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T43",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -393,7 +393,7 @@
   },
   {
     "id": "025",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T44c",
     "marca": "Por definir",
     "precio": 360,
     "descripcion": "",
@@ -409,7 +409,7 @@
   },
   {
     "id": "026",
-    "nombre": "NIKE PEGASUS",
+    "nombre": "NIKE PEGASUS T42.5",
     "marca": "Por definir",
     "precio": 260,
     "descripcion": "",
@@ -425,7 +425,7 @@
   },
   {
     "id": "027",
-    "nombre": "NEW BALANCE FRESH FOAM",
+    "nombre": "NEW BALANCE T42b",
     "marca": "Por definir",
     "precio": 260,
     "descripcion": "",
@@ -441,7 +441,7 @@
   },
   {
     "id": "028",
-    "nombre": "NIKE PEGASUS",
+    "nombre": "NIKE PEGASUS T41b",
     "marca": "Por definir",
     "precio": 260,
     "descripcion": "",
@@ -457,7 +457,7 @@
   },
   {
     "id": "029",
-    "nombre": "JORDAN SPIZIKE LOW",
+    "nombre": "JORDAN SPIZIKE T45",
     "marca": "Por definir",
     "precio": 230,
     "descripcion": "",
@@ -473,7 +473,7 @@
   },
   {
     "id": "030",
-    "nombre": "JORDAN SPIZIKE LOW",
+    "nombre": "JORDAN SPIZIKE T45b",
     "marca": "Por definir",
     "precio": 230,
     "descripcion": "",
@@ -489,7 +489,7 @@
   },
   {
     "id": "031",
-    "nombre": "TENNIS ONCLOUD",
+    "nombre": "TENNIS ONCLOUD T42",
     "marca": "Por definir",
     "precio": 370,
     "descripcion": "",
@@ -505,7 +505,7 @@
   },
   {
     "id": "032",
-    "nombre": "TENNIS  ADIZERO",
+    "nombre": "TENNIS ADIZERO T41d",
     "marca": "Por definir",
     "precio": 380,
     "descripcion": "",
@@ -519,5 +519,18 @@
     "whatsapp": "Hola, me interesa el TENNIS  ADIZERO talla 41 precio Bs 380",
     "color": "",
     "pi_id": 100
+  },
+  {
+    "id": "033",
+    "nombre": "grafica rtx 3090",
+    "marca": "3090",
+    "precio": 5400.0,
+    "descripcion": "grafica rtx 3090",
+    "tallas": [],
+    "stock": 5,
+    "imagen": "assets/images/placeholder.jpg",
+    "whatsapp": "Hola, me interesa el grafica rtx 3090 precio Bs5400.0",
+    "destacado": false,
+    "pi_id": 101
   }
 ]
