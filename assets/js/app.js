@@ -15,10 +15,11 @@ const CONFIG = {
 let allProducts   = [];
 let filtered      = [];
 let currentImages = [];
+window.allProducts = allProducts; // expuesto para stock.js
 
 // ─── Inicialización ──────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
-  // Inyectar números de WhatsApp desde CONFIG (nunca hardcodeados en HTML)
+  // Inyectar números de WhatsApp desde CONFIG
   const hwa1 = document.getElementById('header-wa1');
   if (hwa1) hwa1.href = `https://wa.me/${CONFIG.whatsapp1.numero}`;
 
@@ -31,6 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   buildFilters();
   renderGrid(allProducts);
   attachEvents();
+
+  // Iniciar conexión con Raspberry Pi (si hay Tailscale activo)
+  if (typeof initStock === 'function') initStock();
 });
 
 // ─── Carga del JSON ──────────────────────────────────────────────
@@ -39,6 +43,7 @@ async function loadCatalog() {
     const res = await fetch(CONFIG.catalogPath);
     if (!res.ok) throw new Error('No se pudo cargar el catálogo');
     allProducts = await res.json();
+  window.allProducts = allProducts; // sync global ref
   } catch (e) {
     console.error(e);
     document.getElementById('product-grid').innerHTML =
