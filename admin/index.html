@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Tienda Virtual MIKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Variables ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f5f5f5;
+      --surface:   #ffffff;
+      --border:    #e5e5e5;
+      --text:      #111111;
+      --muted:     #666666;
+      --accent:    #111111;
+      --accent-h:  #333333;
+      --wa:        #25d366;
+      --ok-bg:     #e8f5e9;
+      --ok-txt:    #2e7d32;
+      --ago-bg:    #fdecea;
+      --ago-txt:   #c62828;
+      --danger:    #d32f2f;
+      --blue:      #0366d6;
+      --radius:    8px;
+      --shadow:    0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,.16);
+      --font:      'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: var(--accent); text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+    input, select, textarea {
+      font-family: inherit;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 9px 12px;
+      background: var(--surface);
+      color: var(--text);
+      width: 100%;
+      transition: border-color .2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    label { display: block; margin-bottom: 4px; font-weight: 500; color: var(--muted); font-size: 13px; }
+
+    /* ── Botones ────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      font-weight: 600; font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn--dark  { background: var(--accent); color: #fff; }
+    .btn--dark:hover { background: var(--accent-h); }
+    .btn--ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn--ghost:hover { background: var(--bg); }
+    .btn--danger { background: var(--danger); color: #fff; }
+    .btn--danger:hover { background: #b71c1c; }
+    .btn--sm { padding: 6px 12px; font-size: 13px; }
+    .btn--highlight { background: #0366d6 !important; color: #fff !important; }
+
+    /* ── AUTH SCREENS ───────────────────────────────────────────── */
+    .auth-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+    }
+    .auth-card {
+      background: var(--surface);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .auth-card img.auth-logo {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      object-fit: cover;
+    }
+    .auth-card h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .auth-card p  { color: var(--muted); margin-bottom: 24px; font-size: 14px; }
+    .auth-field { margin-bottom: 16px; text-align: left; }
+    .auth-card .btn { width: 100%; justify-content: center; margin-top: 4px; padding: 12px; }
+
+    /* ── ADMIN APP ──────────────────────────────────────────────── */
+    #screen-app {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .admin-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .admin-header__inner {
+      max-width: 1400px; margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .admin-header__logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 16px;
+    }
+    .admin-header__logo img {
+      width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
+    }
+    .admin-header__badge {
+      background: var(--accent); color: #fff;
+      font-size: 10px; font-weight: 700;
+      padding: 2px 7px; border-radius: 20px;
+      letter-spacing: .5px;
+    }
+    .admin-header__status {
+      display: flex; align-items: center; gap: 16px;
+      margin-left: auto;
+      font-size: 12px; font-weight: 600;
+    }
+    #pi-status, #github-status { white-space: nowrap; }
+    .admin-header__actions {
+      display: flex; gap: 8px; align-items: center;
+    }
+
+    /* Main layout */
+    .admin-main {
+      max-width: 1400px; margin: 0 auto;
+      padding: 24px;
+      flex: 1;
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+    .stat-card__label { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+    .stat-card__value { font-size: 28px; font-weight: 700; }
+    .stat-card--ok  .stat-card__value { color: var(--ok-txt); }
+    .stat-card--ago .stat-card__value { color: var(--ago-txt); }
+    .stat-card--val .stat-card__value { color: var(--blue); font-size: 22px; }
+
+    /* Toolbar */
+    .toolbar {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .toolbar__search {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0 12px;
+      flex: 1; min-width: 200px;
+    }
+    .toolbar__search input {
+      border: none; box-shadow: none; padding: 9px 0;
+    }
+    .toolbar__search input:focus { border: none; outline: none; }
+    #count-label { font-size: 13px; color: var(--muted); margin-left: auto; white-space: nowrap; }
+
+    /* Tabla */
+    .tabla-wrap {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      box-shadow: var(--shadow);
+    }
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      background: var(--bg);
+      padding: 11px 14px;
+      text-align: left;
+      font-size: 12px; font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase; letter-spacing: .5px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #fafafa; }
+    td { padding: 10px 14px; vertical-align: middle; }
+
+    .td-img   { width: 64px; }
+    .td-id    { width: 60px; color: var(--muted); font-size: 13px; }
+    .td-nombre { font-weight: 600; max-width: 220px; }
+    .td-precio { white-space: nowrap; font-weight: 600; }
+    .td-tallas { color: var(--muted); font-size: 13px; max-width: 120px; }
+
+    .tabla-thumb {
+      width: 52px; height: 52px;
+      border-radius: 6px; object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    /* Badge */
+    .badge     { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .badge-ok  { background: var(--ok-bg);  color: var(--ok-txt); }
+    .badge-ago { background: var(--ago-bg); color: var(--ago-txt); }
+
+    /* Stock control */
+    .stock-ctrl {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .stock-btn {
+      width: 28px; height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      font-size: 16px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      line-height: 1;
+      transition: background .15s;
+    }
+    .stock-btn:hover { background: var(--bg); }
+    .stock-input {
+      width: 56px; height: 28px;
+      text-align: center;
+      padding: 4px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* Acciones */
+    .acciones { display: flex; gap: 6px; }
+    .btn-accion {
+      width: 32px; height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, border-color .15s;
+    }
+    .btn-accion:hover { background: var(--bg); }
+    .btn-del:hover { border-color: var(--danger); background: #fdecea; }
+
+    /* ── MODALES ─────────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,.5);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-box {
+      background: var(--surface);
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      width: 100%; max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-box--sm { max-width: 420px; }
+    .modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px 0;
+    }
+    .modal-header h2 { font-size: 18px; font-weight: 700; }
+    .modal-close {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: none; background: var(--bg);
+      font-size: 18px; display: flex; align-items: center; justify-content: center;
+    }
+    .modal-close:hover { background: var(--border); }
+    .modal-body { padding: 20px 24px 24px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-full  { grid-column: 1 / -1; }
+    .form-group { margin-bottom: 0; }
+    .form-actions {
+      display: flex; gap: 10px; justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    /* Token modal */
+    .token-hint {
+      font-size: 12px; color: var(--muted);
+      background: var(--bg);
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .token-hint a { color: var(--blue); text-decoration: underline; }
+
+    /* ── TOAST ──────────────────────────────────────────────────── */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: var(--accent); color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-size: 14px; font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      z-index: 9999;
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .3s, transform .3s;
+      pointer-events: none;
+    }
+    .toast--visible   { opacity: 1; transform: translateY(0); }
+    .toast--success   { background: #2e7d32; }
+    .toast--error     { background: var(--danger); }
+    .toast--info      { background: #555; }
+
+    /* ── LOADING ─────────────────────────────────────────────────── */
+    .loading-overlay {
+      position: fixed; inset: 0; z-index: 300;
+      background: rgba(255,255,255,.8);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .admin-header__status { display: none; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .admin-main { padding: 16px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .toolbar { gap: 8px; }
+      #count-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     PANTALLA 1 — Configurar contraseña (primera vez)
+════════════════════════════════════════════════════════════ -->
+<div id="screen-setup" class="auth-screen" hidden>
+  <div class="auth-card">
+    <img src="../assets/images/logo.jpeg" alt="MIKI" class="auth-logo"
+         onerror="this.style.display='none'" />
+    <h1>Crear contraseña</h1>
+    <p>Primera vez que ingresas al panel. Elige una contraseña para protegerlo.</p>
+    <form id="form-setup">
+      <div class="auth-field">
+        <label for="setup-pwd">Nueva contraseña</label>
+        <input id="setup-pwd" type="password" placeholder="Mínimo 6 caracteres" required minlength="6" />
+      </div>
+      <div class="auth-field">
+        <label for="setup-confirm">Confirmar contraseña</label>
+        <input id="setup-confirm" type="password" placeholder="Repite la contraseña" required />
+      </div>
+      <button type="submit" class="btn btn--dark">Crear contraseña y entrar</button>
+    </form>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PANTALLA 2 — Login
+════════════════════════════════════════════════════════════ -->
+<div id="screen-login" class="auth-screen" hidden>
+  <div class="auth-card">
+    <img src="../assets/images/logo.jpeg" alt="MIKI" class="auth-logo"
+         onerror="this.style.display='none'" />
+    <h1>Panel Admin</h1>
+    <p>Tienda Virtual MIKI — Acceso restringido</p>
+    <form id="form-login">
+      <div class="auth-field">
+        <label for="login-pwd">Contraseña</label>
+        <input id="login-pwd" type="password" placeholder="Ingresa tu contraseña" required autofocus />
+      </div>
+      <button type="submit" class="btn btn--dark">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PANTALLA 3 — App principal
+════════════════════════════════════════════════════════════ -->
+<div id="screen-app" hidden>
+
+  <!-- HEADER ─────────────────────────────────────────────────── -->
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <div class="admin-header__logo">
+        <img src="../assets/images/logo.jpeg" alt="MIKI"
+             onerror="this.style.display='none'" />
+        <span>Tienda MIKI</span>
+        <span class="admin-header__badge">ADMIN</span>
+      </div>
+
+      <div class="admin-header__status">
+        <span id="pi-status" style="color:#aaa">● Pi sin conexión</span>
+        <span id="github-status" style="color:#aaa">● Sin token</span>
+      </div>
+
+      <div class="admin-header__actions">
+        <button id="btn-sync-pi" class="btn btn--ghost btn--sm" onclick="syncPiStock()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg>
+          Sync Pi
+        </button>
+        <button id="btn-save-github" class="btn btn--dark btn--sm" onclick="saveToGitHub()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Guardar en GitHub
+        </button>
+        <button class="btn btn--ghost btn--sm" onclick="abrirCambiarPwd()" title="Cambiar contraseña">🔑</button>
+        <button class="btn btn--ghost btn--sm" onclick="logout()" title="Cerrar sesión">Salir</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN ──────────────────────────────────────────────────────── -->
+  <main class="admin-main">
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <p class="stat-card__label">Total productos</p>
+        <p class="stat-card__value" id="stat-total">—</p>
+      </div>
+      <div class="stat-card stat-card--ok">
+        <p class="stat-card__label">En stock</p>
+        <p class="stat-card__value" id="stat-stock">—</p>
+      </div>
+      <div class="stat-card stat-card--ago">
+        <p class="stat-card__label">Agotados</p>
+        <p class="stat-card__value" id="stat-agotado">—</p>
+      </div>
+      <div class="stat-card stat-card--val">
+        <p class="stat-card__label">Valor en stock</p>
+        <p class="stat-card__value" id="stat-valor">—</p>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="toolbar__search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="search-admin" placeholder="Buscar por nombre, marca o ID…" autocomplete="off" />
+      </div>
+      <button class="btn btn--dark" onclick="abrirNuevo()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Añadir producto
+      </button>
+      <span id="count-label" style="font-size:13px;color:#999"></span>
+    </div>
+
+    <!-- Tabla -->
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Tallas</th>
+            <th>Stock</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body">
+          <tr><td colspan="9" style="text-align:center;padding:40px;color:#999">Cargando…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div><!-- /screen-app -->
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL — Formulario de producto
+════════════════════════════════════════════════════════════ -->
+<div id="modal-form" class="modal-overlay" hidden>
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="modal-form-title">Añadir Producto</h2>
+      <button class="modal-close" onclick="cerrarModalForm()">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="form-producto">
+        <div class="form-grid">
+
+          <div class="form-group form-full">
+            <label for="f-nombre">Nombre del producto *</label>
+            <input id="f-nombre" type="text" placeholder="Ej: Tennis OnCloud Masculino T41" required />
+          </div>
+
+          <div class="form-group">
+            <label for="f-marca">Marca</label>
+            <input id="f-marca" type="text" placeholder="Ej: On Cloud" list="marcas-list" />
+            <datalist id="marcas-list">
+              <option value="On Cloud" />
+              <option value="Adidas" />
+              <option value="Nike" />
+              <option value="New Balance" />
+              <option value="Jordan" />
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="f-precio">Precio (Bs) *</label>
+            <input id="f-precio" type="number" placeholder="Ej: 320" min="1" step="0.5" required />
+          </div>
+
+          <div class="form-group">
+            <label for="f-stock">Stock inicial</label>
+            <input id="f-stock" type="number" placeholder="0" min="0" value="0" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-tallas">Tallas disponibles *</label>
+            <input id="f-tallas" type="text" placeholder="Ej: 40, 41, 42, 43" />
+          </div>
+
+          <div class="form-group form-full">
+            <label for="f-descripcion">Descripción</label>
+            <textarea id="f-descripcion" rows="2" placeholder="Descripción breve del producto…" style="resize:vertical"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-carpeta">Carpeta de imágenes</label>
+            <input id="f-carpeta" type="text" placeholder="Ej: 33_tennis_nike_t42" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-imagen">URL imagen principal</label>
+            <input id="f-imagen" type="text" placeholder="assets/images/carpeta/main.jpg" />
+          </div>
+
+          <div class="form-group form-full">
+            <label for="f-whatsapp">Mensaje de WhatsApp</label>
+            <input id="f-whatsapp" type="text" placeholder="Hola, me interesa el … Bs …" />
+          </div>
+
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--ghost" onclick="cerrarModalForm()">Cancelar</button>
+          <button type="submit" class="btn btn--dark">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL — GitHub Token
+════════════════════════════════════════════════════════════ -->
+<div id="modal-token" class="modal-overlay" hidden>
+  <div class="modal-box modal-box--sm">
+    <div class="modal-header">
+      <h2>Token de GitHub</h2>
+      <button class="modal-close" onclick="cerrarModalToken()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="token-hint">
+        Necesitas un <strong>Personal Access Token (PAT)</strong> de GitHub con permisos de <code>repo</code>.
+        Crea uno en:
+        <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a>.
+        <br/>Se guarda en este navegador (localStorage) y no viaja a ningún servidor.
+      </div>
+      <form id="form-token">
+        <div style="margin-bottom:16px">
+          <label for="input-token">Personal Access Token</label>
+          <input id="input-token" type="password" placeholder="ghp_…" required />
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--ghost" onclick="cerrarModalToken()">Cancelar</button>
+          <button type="submit" class="btn btn--dark">Guardar y subir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL — Cambiar contraseña
+════════════════════════════════════════════════════════════ -->
+<div id="modal-pwd" class="modal-overlay" hidden>
+  <div class="modal-box modal-box--sm">
+    <div class="modal-header">
+      <h2>Cambiar contraseña</h2>
+      <button class="modal-close" onclick="cerrarModalPwd()">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="form-cambiar-pwd">
+        <div style="margin-bottom:14px">
+          <label for="pwd-actual">Contraseña actual</label>
+          <input id="pwd-actual" type="password" required />
+        </div>
+        <div style="margin-bottom:14px">
+          <label for="pwd-nueva">Nueva contraseña</label>
+          <input id="pwd-nueva" type="password" placeholder="Mínimo 6 caracteres" required minlength="6" />
+        </div>
+        <div style="margin-bottom:14px">
+          <label for="pwd-confirm">Confirmar nueva contraseña</label>
+          <input id="pwd-confirm" type="password" required />
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--ghost" onclick="cerrarModalPwd()">Cancelar</button>
+          <button type="submit" class="btn btn--dark">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Toast de notificaciones -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- Loading overlay -->
+<div id="loading-overlay" class="loading-overlay" hidden>
+  <div class="spinner"></div>
+  <p style="color:#666;font-size:14px">Cargando catálogo…</p>
+</div>
+
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

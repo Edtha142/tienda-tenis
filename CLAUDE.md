@@ -10,9 +10,9 @@ Tienda web profesional de venta de tenis (sneakers), en tres fases:
 
 | Fase | Objetivo | Estado |
 |------|----------|--------|
-| 1 | Tienda estática en GitHub Pages | 🔲 Por iniciar |
-| 2 | Stock en tiempo real desde Raspberry Pi | 🔲 Por iniciar |
-| 3 | Panel de administración web (/admin) | 🔲 Por iniciar |
+| 1 | Tienda estática en GitHub Pages | ✅ Completada |
+| 2 | Stock en tiempo real desde Raspberry Pi | ✅ Completada |
+| 3 | Panel de administración web (/admin) | ✅ Completada |
 
 ---
 
