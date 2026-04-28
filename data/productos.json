@@ -3,12 +3,12 @@
     "id": "001",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       41
     ],
-    "stock": 0,
+    "stock": 1,
     "imagen": "assets/images/01_tennis_oncloud_t41/main.jpg",
     "carpeta": "01_tennis_oncloud_t41",
     "destacado": false,
@@ -19,7 +19,7 @@
     "id": "002",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       41
@@ -36,7 +36,7 @@
     "id": "003",
     "nombre": "ADIDAS ULTRABOOST",
     "marca": "Por definir",
-    "precio": 290.0,
+    "precio": 290,
     "descripcion": "",
     "tallas": [
       40
@@ -52,7 +52,7 @@
     "id": "004",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       42
@@ -69,7 +69,7 @@
     "id": "005",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       44
@@ -86,7 +86,7 @@
     "id": "006",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       41
@@ -103,7 +103,7 @@
     "id": "007",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       42
@@ -120,7 +120,7 @@
     "id": "008",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       40
@@ -137,7 +137,7 @@
     "id": "009",
     "nombre": "ADIDAS ULTRABOOST",
     "marca": "Por definir",
-    "precio": 290.0,
+    "precio": 290,
     "descripcion": "",
     "tallas": [
       41
@@ -153,7 +153,7 @@
     "id": "010",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       41
@@ -170,7 +170,7 @@
     "id": "011",
     "nombre": "TENNIS ADIZERO",
     "marca": "Por definir",
-    "precio": 350.0,
+    "precio": 350,
     "descripcion": "",
     "tallas": [
       45
@@ -187,7 +187,7 @@
     "id": "012",
     "nombre": "NEW BALANCE FRESH FOAM",
     "marca": "Por definir",
-    "precio": 250.0,
+    "precio": 250,
     "descripcion": "",
     "tallas": [
       42
@@ -203,7 +203,7 @@
     "id": "013",
     "nombre": "NIKE PEGASUS",
     "marca": "Por definir",
-    "precio": 250.0,
+    "precio": 250,
     "descripcion": "",
     "tallas": [
       41
@@ -219,7 +219,7 @@
     "id": "014",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 370.0,
+    "precio": 370,
     "descripcion": "",
     "tallas": [
       44
@@ -235,7 +235,7 @@
     "id": "015",
     "nombre": "NIKE PEGASUS",
     "marca": "Por definir",
-    "precio": 230.0,
+    "precio": 230,
     "descripcion": "",
     "tallas": [
       45
@@ -251,7 +251,7 @@
     "id": "016",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       40
@@ -267,7 +267,7 @@
     "id": "017",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 370.0,
+    "precio": 370,
     "descripcion": "",
     "tallas": [
       40
@@ -283,7 +283,7 @@
     "id": "018",
     "nombre": "NIKE PEGASUS",
     "marca": "Por definir",
-    "precio": 280.0,
+    "precio": 280,
     "descripcion": "",
     "tallas": [
       42
@@ -299,7 +299,7 @@
     "id": "019",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 370.0,
+    "precio": 370,
     "descripcion": "",
     "tallas": [
       44
@@ -315,7 +315,7 @@
     "id": "020",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       40
@@ -331,7 +331,7 @@
     "id": "021",
     "nombre": "NEW BALANCE FRESH FOAM",
     "marca": "Por definir",
-    "precio": 250.0,
+    "precio": 250,
     "descripcion": "",
     "tallas": [
       43
@@ -347,7 +347,7 @@
     "id": "022",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       41
@@ -363,7 +363,7 @@
     "id": "023",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 370.0,
+    "precio": 370,
     "descripcion": "",
     "tallas": [
       41
@@ -379,7 +379,7 @@
     "id": "024",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       43
@@ -395,7 +395,7 @@
     "id": "025",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 360.0,
+    "precio": 360,
     "descripcion": "",
     "tallas": [
       44
@@ -411,7 +411,7 @@
     "id": "026",
     "nombre": "NIKE PEGASUS",
     "marca": "Por definir",
-    "precio": 260.0,
+    "precio": 260,
     "descripcion": "",
     "tallas": [
       42.5
@@ -427,7 +427,7 @@
     "id": "027",
     "nombre": "NEW BALANCE FRESH FOAM",
     "marca": "Por definir",
-    "precio": 260.0,
+    "precio": 260,
     "descripcion": "",
     "tallas": [
       42
@@ -443,7 +443,7 @@
     "id": "028",
     "nombre": "NIKE PEGASUS",
     "marca": "Por definir",
-    "precio": 260.0,
+    "precio": 260,
     "descripcion": "",
     "tallas": [
       41
@@ -459,7 +459,7 @@
     "id": "029",
     "nombre": "JORDAN SPIZIKE LOW",
     "marca": "Por definir",
-    "precio": 230.0,
+    "precio": 230,
     "descripcion": "",
     "tallas": [
       45
@@ -475,7 +475,7 @@
     "id": "030",
     "nombre": "JORDAN SPIZIKE LOW",
     "marca": "Por definir",
-    "precio": 230.0,
+    "precio": 230,
     "descripcion": "",
     "tallas": [
       45
@@ -491,7 +491,7 @@
     "id": "031",
     "nombre": "TENNIS ONCLOUD",
     "marca": "Por definir",
-    "precio": 370.0,
+    "precio": 370,
     "descripcion": "",
     "tallas": [
       42
@@ -507,7 +507,7 @@
     "id": "032",
     "nombre": "TENNIS  ADIZERO",
     "marca": "Por definir",
-    "precio": 380.0,
+    "precio": 380,
     "descripcion": "",
     "tallas": [
       41
