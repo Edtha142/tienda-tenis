@@ -526,7 +526,9 @@
     "marca": "3090",
     "precio": 5400.0,
     "descripcion": "grafica rtx 3090",
-    "tallas": [],
+    "tallas": [
+      42.0
+    ],
     "stock": 3,
     "imagen": "assets/images/grafica_rtx_3090_1777399844823.jpg",
     "whatsapp": "Hola, me interesa el grafica rtx 3090 precio Bs5400.0",
