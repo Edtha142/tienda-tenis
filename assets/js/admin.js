@@ -22,27 +22,36 @@ let editingId   = null; // null = nuevo producto
 let hasChanges  = false;
 
 // ═══════════════════════════════════════════════════════════════
-// AUTH — Contraseña con SHA-256 en localStorage
+// AUTH — Hash sincrónico (compatible con extensiones de navegador)
 // ═══════════════════════════════════════════════════════════════
 
-async function hashPwd(pwd) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pwd));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+// Hash djb2 + sal fija — suficiente para panel de uso personal
+function hashPwd(pwd) {
+  const salted = 'miki-admin-2025:' + pwd;
+  let h = 5381;
+  for (let i = 0; i < salted.length; i++) {
+    h = (Math.imul(h, 33) ^ salted.charCodeAt(i)) >>> 0;
+  }
+  // Segunda pasada para más entropía
+  let h2 = h ^ 0xdeadbeef;
+  for (let i = salted.length - 1; i >= 0; i--) {
+    h2 = (Math.imul(h2, 31) + salted.charCodeAt(i)) >>> 0;
+  }
+  return h.toString(16).padStart(8,'0') + h2.toString(16).padStart(8,'0');
 }
 
-async function setupContrasena(pwd, confirm) {
+function setupContrasena(pwd, confirm) {
   if (!pwd || pwd.length < 6) { showToast('Mínimo 6 caracteres', 'error'); return; }
   if (pwd !== confirm)        { showToast('Las contraseñas no coinciden', 'error'); return; }
-  localStorage.setItem('admin_hash', await hashPwd(pwd));
+  localStorage.setItem('admin_hash', hashPwd(pwd));
   sessionStorage.setItem('admin_ok', '1');
   showApp();
 }
 
-async function login(pwd) {
+function login(pwd) {
   const stored = localStorage.getItem('admin_hash');
   if (!stored) { checkAuth(); return; }
-  const h = await hashPwd(pwd);
-  if (h === stored) {
+  if (hashPwd(pwd) === stored) {
     sessionStorage.setItem('admin_ok', '1');
     showApp();
   } else {
@@ -528,15 +537,15 @@ function cerrarModalPwd() {
   document.getElementById('form-cambiar-pwd').reset();
 }
 
-async function cambiarContrasena(actual, nueva, confirm) {
+function cambiarContrasena(actual, nueva, confirm) {
   const stored = localStorage.getItem('admin_hash');
-  if ((await hashPwd(actual)) !== stored) {
+  if (hashPwd(actual) !== stored) {
     showToast('Contraseña actual incorrecta', 'error');
     return;
   }
   if (nueva.length < 6) { showToast('Mínimo 6 caracteres', 'error'); return; }
   if (nueva !== confirm) { showToast('Las contraseñas no coinciden', 'error'); return; }
-  localStorage.setItem('admin_hash', await hashPwd(nueva));
+  localStorage.setItem('admin_hash', hashPwd(nueva));
   cerrarModalPwd();
   showToast('Contraseña actualizada', 'success');
 }
