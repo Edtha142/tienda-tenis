@@ -79,12 +79,11 @@ async function showApp() {
 
 async function init() {
   await loadProductos();
-  syncPiStock(); // no await — se hace en paralelo
   renderTabla();
   renderStats();
   attachAdminEvents();
-  // Si hay token guardado, mostrar estado
   updateGithubStatus(!!getToken());
+  // Pi sync solo al presionar el botón — no automático al cargar
 }
 
 // ═══════════════════════════════════════════════════════════════
