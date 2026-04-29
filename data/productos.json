@@ -197,11 +197,13 @@
       42
     ],
     "stock": 1,
-    "imagen": "assets/images/12_new_balance_fresh_foam_t42/main.jpg",
+    "imagen": "assets/images/new_balance_t42_f1_1777484383461.jpg",
     "carpeta": "12_new_balance_fresh_foam_t42",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NEW BALANCE FRESH FOAM talla 42 precio Bs 250",
-    "pi_id": 80
+    "pi_id": 80,
+    "imagen2": "assets/images/new_balance_t42_f2_1777484393215.jpg",
+    "imagen3": "assets/images/new_balance_t42_f3_1777484399593.jpg"
   },
   {
     "id": "013",
