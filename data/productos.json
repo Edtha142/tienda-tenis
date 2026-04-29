@@ -215,11 +215,13 @@
       41
     ],
     "stock": 1,
-    "imagen": "assets/images/13_nike_pegasus_t41/main.jpg",
+    "imagen": "assets/images/nike_pegasus_t41_f1_1777484634724.jpg",
     "carpeta": "13_nike_pegasus_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NIKE PEGASUS talla 41 precio Bs 250",
-    "pi_id": 81
+    "pi_id": 81,
+    "imagen2": "assets/images/nike_pegasus_t41_f2_1777484643389.jpg",
+    "imagen3": "assets/images/nike_pegasus_t41_f3_1777484653299.jpg"
   },
   {
     "id": "014",
@@ -343,11 +345,13 @@
       43
     ],
     "stock": 1,
-    "imagen": "assets/images/21_new_balance_fresh_foam_t43/main.jpg",
+    "imagen": "assets/images/new_balance_t43_f1_1777484542128.jpg",
     "carpeta": "21_new_balance_fresh_foam_t43",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NEW BALANCE FRESH FOAM talla 43 precio Bs 250",
-    "pi_id": 89
+    "pi_id": 89,
+    "imagen2": "assets/images/new_balance_t43_f2_1777484550200.jpg",
+    "imagen3": "assets/images/new_balance_t43_f3_1777484556049.jpg"
   },
   {
     "id": "022",
@@ -440,11 +444,13 @@
       42
     ],
     "stock": 1,
-    "imagen": "assets/images/27_new_balance_fresh_foam_t42/main.jpg",
+    "imagen": "assets/images/new_balance_t42b_f1_1777484473302.jpg",
     "carpeta": "27_new_balance_fresh_foam_t42",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NEW BALANCE FRESH FOAM talla 42 precio Bs 260",
-    "pi_id": 95
+    "pi_id": 95,
+    "imagen2": "assets/images/new_balance_t42b_f2_1777484481649.jpg",
+    "imagen3": "assets/images/new_balance_t42b_f3_1777484489517.jpg"
   },
   {
     "id": "028",
