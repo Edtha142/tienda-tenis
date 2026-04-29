@@ -145,11 +145,13 @@
       41
     ],
     "stock": 1,
-    "imagen": "assets/images/09_adidas_ultraboost_t41/main.jpg",
+    "imagen": "assets/images/adidas_ultraboost_t41_f1_1777484127626.jpg",
     "carpeta": "09_adidas_ultraboost_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el ADIDAS ULTRABOOST talla 41 precio Bs 290",
-    "pi_id": 77
+    "pi_id": 77,
+    "imagen2": "assets/images/adidas_ultraboost_t41_f2_1777484137341.jpg",
+    "imagen3": "assets/images/adidas_ultraboost_t41_f3_1777484144306.jpg"
   },
   {
     "id": "010",
@@ -468,15 +470,17 @@
       45
     ],
     "stock": 1,
-    "imagen": "assets/images/29_jordan_spizike_low_t45/main.jpg",
+    "imagen": "assets/images/jordan_spizike_t45_f1_1777484199431.jpg",
     "carpeta": "29_jordan_spizike_low_t45",
     "destacado": false,
     "whatsapp": "Hola, me interesa el JORDAN SPIZIKE LOW talla 45 precio Bs 230",
-    "pi_id": 97
+    "pi_id": 97,
+    "imagen2": "assets/images/jordan_spizike_t45_f2_1777484208066.jpg",
+    "imagen3": "assets/images/jordan_spizike_t45_f3_1777484217691.jpg"
   },
   {
     "id": "030",
-    "nombre": "JORDAN SPIZIKE T45b",
+    "nombre": "JORDAN SPIZIKE T45",
     "marca": "Por definir",
     "precio": 230,
     "descripcion": "",
@@ -484,11 +488,13 @@
       45
     ],
     "stock": 1,
-    "imagen": "assets/images/30_jordan_spizike_low_t45/main.jpg",
+    "imagen": "assets/images/jordan_spizike_t45_f1_1777484274258.jpg",
     "carpeta": "30_jordan_spizike_low_t45",
     "destacado": false,
     "whatsapp": "Hola, me interesa el JORDAN SPIZIKE LOW talla 45 precio Bs 230",
-    "pi_id": 98
+    "pi_id": 98,
+    "imagen2": "assets/images/jordan_spizike_t45_f2_1777484282705.jpg",
+    "imagen3": "assets/images/jordan_spizike_t45_f3_1777484290241.jpg"
   },
   {
     "id": "031",
