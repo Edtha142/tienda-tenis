@@ -25,12 +25,14 @@
       41
     ],
     "stock": 1,
-    "imagen": "assets/images/02_tennis_adizero_t41/main.jpg",
+    "imagen": "assets/images/tennis_adizero_t41_f1_1777485195911.jpg",
     "carpeta": "02_tennis_adizero_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ADIZERO talla 41 precio Bs 380",
     "color": "",
-    "pi_id": 70
+    "pi_id": 70,
+    "imagen2": "assets/images/tennis_adizero_t41_f2_1777485202782.jpg",
+    "imagen3": "assets/images/tennis_adizero_t41_f3_1777485213344.jpg"
   },
   {
     "id": "003",
@@ -128,12 +130,14 @@
       40
     ],
     "stock": 1,
-    "imagen": "assets/images/08_tennis_adizero_t40/main.jpg",
+    "imagen": "assets/images/tennis_adizero_t40_f1_1777485133352.jpg",
     "carpeta": "08_tennis_adizero_t40",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ADIZERO talla 40 precio Bs 380",
     "color": "",
-    "pi_id": 76
+    "pi_id": 76,
+    "imagen2": "assets/images/tennis_adizero_t40_f2_1777485142792.jpg",
+    "imagen3": "assets/images/tennis_adizero_t40_f3_1777485151187.jpg"
   },
   {
     "id": "009",
