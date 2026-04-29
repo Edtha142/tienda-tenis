@@ -390,11 +390,13 @@
       41
     ],
     "stock": 1,
-    "imagen": "assets/images/22_tennis_oncloud_t41/main.jpg",
+    "imagen": "assets/images/tennis_oncloud_t41b_f1_1777486489908.jpg",
     "carpeta": "22_tennis_oncloud_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 41 precio Bs 380",
-    "pi_id": 90
+    "pi_id": 90,
+    "imagen2": "assets/images/tennis_oncloud_t41b_f2_1777486499879.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t41b_f3_1777486508401.jpg"
   },
   {
     "id": "023",
