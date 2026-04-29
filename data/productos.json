@@ -297,11 +297,13 @@
       42
     ],
     "stock": 1,
-    "imagen": "assets/images/18_nike_pegasus_t42/main.jpg",
+    "imagen": "assets/images/nike_pegasus_t42_f1_1777484907710.jpg",
     "carpeta": "18_nike_pegasus_t42",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NIKE PEGASUS talla 42 precio Bs 280",
-    "pi_id": 86
+    "pi_id": 86,
+    "imagen2": "assets/images/nike_pegasus_t42_f2_1777484915642.jpg",
+    "imagen3": "assets/images/nike_pegasus_t42_f3_1777484925813.jpg"
   },
   {
     "id": "019",
@@ -428,11 +430,13 @@
       42.5
     ],
     "stock": 1,
-    "imagen": "assets/images/26_nike_pegasus_t42.5/main.jpg",
+    "imagen": "assets/images/nike_pegasus_t42_5_f1_1777484970983.jpg",
     "carpeta": "26_nike_pegasus_t42.5",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NIKE PEGASUS talla 42.5 precio Bs 260",
-    "pi_id": 94
+    "pi_id": 94,
+    "imagen2": "assets/images/nike_pegasus_t42_5_f2_1777484979290.jpg",
+    "imagen3": "assets/images/nike_pegasus_t42_5_f3_1777484986520.jpg"
   },
   {
     "id": "027",
@@ -462,11 +466,13 @@
       41
     ],
     "stock": 1,
-    "imagen": "assets/images/28_nike_pegasus_t41/main.jpg",
+    "imagen": "assets/images/nike_pegasus_t41b_f1_1777484823789.jpg",
     "carpeta": "28_nike_pegasus_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NIKE PEGASUS talla 41 precio Bs 260",
-    "pi_id": 96
+    "pi_id": 96,
+    "imagen2": "assets/images/nike_pegasus_t41b_f2_1777484835391.jpg",
+    "imagen3": "assets/images/nike_pegasus_t41b_f3_1777484842728.jpg"
   },
   {
     "id": "029",
