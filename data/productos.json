@@ -249,11 +249,13 @@
       45
     ],
     "stock": 1,
-    "imagen": "assets/images/15_nike_pegasus_t45/main.jpg",
+    "imagen": "assets/images/nike_pegasus_t45_f1_1777485038124.jpg",
     "carpeta": "15_nike_pegasus_t45",
     "destacado": false,
     "whatsapp": "Hola, me interesa el NIKE PEGASUS talla 45 precio Bs 230",
-    "pi_id": 83
+    "pi_id": 83,
+    "imagen2": "assets/images/nike_pegasus_t45_f2_1777485045565.jpg",
+    "imagen3": "assets/images/nike_pegasus_t45_f3_1777485053388.jpg"
   },
   {
     "id": "016",
