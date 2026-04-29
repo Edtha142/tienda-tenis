@@ -648,5 +648,20 @@
     "pi_id": 103,
     "imagen2": "assets/images/tennis_adizero_t41_f2_1777489660341.jpg",
     "imagen3": "assets/images/tennis_adizero_t41_f3_1777489667042.jpg"
+  },
+  {
+    "id": "037",
+    "nombre": "frtxxx",
+    "marca": "xax",
+    "precio": 5000.0,
+    "descripcion": "frtxxx",
+    "tallas": [
+      44.0
+    ],
+    "stock": 1,
+    "imagen": "assets/images/frtxxx_f1_1777493559334.jpg",
+    "whatsapp": "Hola, me interesa el frtxxx precio Bs5000.0",
+    "destacado": false,
+    "pi_id": 105
   }
 ]
