@@ -62,12 +62,14 @@
       42
     ],
     "stock": 1,
-    "imagen": "assets/images/04_tennis_adizero_t42/main.jpg",
+    "imagen": "assets/images/tennis_adizero_t42_f1_1777485836627.jpg",
     "carpeta": "04_tennis_adizero_t42",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ADIZERO talla 42 precio Bs 380",
     "color": "",
-    "pi_id": 72
+    "pi_id": 72,
+    "imagen2": "assets/images/tennis_adizero_t42_f2_1777485844151.jpg",
+    "imagen3": "assets/images/tennis_adizero_t42_f3_1777485851677.jpg"
   },
   {
     "id": "005",
@@ -545,12 +547,14 @@
       41
     ],
     "stock": 1,
-    "imagen": "assets/images/32_tennis__adizero_t41/main.jpg",
+    "imagen": "assets/images/tennis_adizero_t41d_f1_1777485612112.jpg",
     "carpeta": "32_tennis__adizero_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS  ADIZERO talla 41 precio Bs 380",
     "color": "",
-    "pi_id": 100
+    "pi_id": 100,
+    "imagen2": "assets/images/tennis_adizero_t41d_f2_1777485620176.jpg",
+    "imagen3": "assets/images/tennis_adizero_t41d_f3_1777485626524.jpg"
   },
   {
     "id": "033",
@@ -567,5 +571,20 @@
     "destacado": false,
     "pi_id": 101,
     "imagen2": "assets/images/grafica_rtx_3090_f2_1777473592562.jpg"
+  },
+  {
+    "id": "034",
+    "nombre": "TENNIS ADIZERO T41",
+    "marca": "Adidas",
+    "precio": 380.0,
+    "descripcion": "TENNIS ADIZERO T41",
+    "tallas": [
+      41.0
+    ],
+    "stock": 1,
+    "imagen": "assets/images/tennis_adizero_t41_f1_1777485754373.jpg",
+    "whatsapp": "Hola, me interesa el TENNIS ADIZERO T41 precio Bs380.0",
+    "destacado": false,
+    "pi_id": 102
   }
 ]
