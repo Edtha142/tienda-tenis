@@ -250,11 +250,13 @@
       44
     ],
     "stock": 1,
-    "imagen": "assets/images/14_tennis_oncloud_t44/main.jpg",
+    "imagen": "assets/images/tennis_oncloud_t44_f1_1777487275589.jpg",
     "carpeta": "14_tennis_oncloud_t44",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 44 precio Bs 370",
-    "pi_id": 82
+    "pi_id": 82,
+    "imagen2": "assets/images/tennis_oncloud_t44_f2_1777487287748.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t44_f3_1777487296631.jpg"
   },
   {
     "id": "015",
@@ -338,11 +340,13 @@
       44
     ],
     "stock": 1,
-    "imagen": "assets/images/19_tennis_oncloud_t44/main.jpg",
+    "imagen": "assets/images/tennis_oncloud_t44b_f1_1777487338604.jpg",
     "carpeta": "19_tennis_oncloud_t44",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 44 precio Bs 370",
-    "pi_id": 87
+    "pi_id": 87,
+    "imagen2": "assets/images/tennis_oncloud_t44b_f2_1777487345465.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t44b_f3_1777487352477.jpg"
   },
   {
     "id": "020",
@@ -426,11 +430,13 @@
       43
     ],
     "stock": 1,
-    "imagen": "assets/images/24_tennis_oncloud_t43/main.jpg",
+    "imagen": "assets/images/tennis_oncloud_t43_f1_1777487199793.jpg",
     "carpeta": "24_tennis_oncloud_t43",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 43 precio Bs 380",
-    "pi_id": 92
+    "pi_id": 92,
+    "imagen2": "assets/images/tennis_oncloud_t43_f2_1777487210046.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t43_f3_1777487217011.jpg"
   },
   {
     "id": "025",
