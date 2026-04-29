@@ -8,12 +8,14 @@
     "tallas": [
       41
     ],
-    "stock": 2,
-    "imagen": "assets/images/01_tennis_oncloud_t41/main.jpg",
+    "stock": 1,
+    "imagen": "assets/images/tennis_oncloud_t41_f1_1777486404864.jpg",
     "carpeta": "01_tennis_oncloud_t41",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 41 precio Bs 380",
-    "pi_id": 69
+    "pi_id": 69,
+    "imagen2": "assets/images/tennis_oncloud_t41_f2_1777486412685.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t41_f3_1777486418907.jpg"
   },
   {
     "id": "002",
@@ -294,17 +296,19 @@
     "id": "017",
     "nombre": "TENNIS ONCLOUD T40b",
     "marca": "Por definir",
-    "precio": 370,
+    "precio": 380.0,
     "descripcion": "",
     "tallas": [
       40
     ],
     "stock": 1,
-    "imagen": "assets/images/17_tennis_oncloud_t40/main.jpg",
+    "imagen": "assets/images/tennis_oncloud_t40b_f1_1777486242361.jpg",
     "carpeta": "17_tennis_oncloud_t40",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 40 precio Bs 370",
-    "pi_id": 85
+    "pi_id": 85,
+    "imagen2": "assets/images/tennis_oncloud_t40b_f2_1777486252029.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t40b_f3_1777486260009.jpg"
   },
   {
     "id": "018",
@@ -350,11 +354,13 @@
       40
     ],
     "stock": 1,
-    "imagen": "assets/images/20_tennis_oncloud_t40/main.jpg",
+    "imagen": "assets/images/tennis_oncloud_t40c_f1_1777486316871.jpg",
     "carpeta": "20_tennis_oncloud_t40",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ONCLOUD talla 40 precio Bs 380",
-    "pi_id": 88
+    "pi_id": 88,
+    "imagen2": "assets/images/tennis_oncloud_t40c_f2_1777486326819.jpg",
+    "imagen3": "assets/images/tennis_oncloud_t40c_f3_1777486334691.jpg"
   },
   {
     "id": "021",
