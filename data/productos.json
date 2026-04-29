@@ -42,11 +42,13 @@
       40
     ],
     "stock": 1,
-    "imagen": "assets/images/03_tennis_adodas_ultraboost_t40/main.jpg",
+    "imagen": "assets/images/adidas_ultraboost_t40_f1_1777484020343.jpg",
     "carpeta": "03_tennis_adodas_ultraboost_t40",
     "destacado": false,
     "whatsapp": "Hola, me interesa el TENNIS ADIDAS ULTRABOOST talla 40 precio Bs 290",
-    "pi_id": 71
+    "pi_id": 71,
+    "imagen2": "assets/images/adidas_ultraboost_t40_f2_1777484028966.jpg",
+    "imagen3": "assets/images/adidas_ultraboost_t40_f3_1777484035324.jpg"
   },
   {
     "id": "004",
