@@ -40,7 +40,7 @@
     "id": "003",
     "nombre": "ADIDAS ULTRABOOST T40",
     "marca": "Por definir",
-    "precio": 290,
+    "precio": 250.0,
     "descripcion": "",
     "tallas": [
       40
@@ -153,7 +153,7 @@
     "id": "009",
     "nombre": "ADIDAS ULTRABOOST T41",
     "marca": "Por definir",
-    "precio": 290,
+    "precio": 250.0,
     "descripcion": "",
     "tallas": [
       41
@@ -586,7 +586,7 @@
     "id": "035",
     "nombre": "ADIDAS ULTRABOOST T40",
     "marca": "Nike",
-    "precio": 260.0,
+    "precio": 250.0,
     "descripcion": "ADIDAS ULTRABOOST T40",
     "tallas": [
       40.0
